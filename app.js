@@ -28,6 +28,10 @@ function addItem(e) {
     const element = document.createElement("article");
     // add class
     element.classList.add("grocery-item");
+    // add id
+    const attr = document.createAttribute("data-id");
+    attr.value = id;
+    element.setAttributeNode(attr);
   } else if (value && editFlag) {
     console.log("editing");
   } else {
