@@ -25,7 +25,9 @@ function addItem(e) {
   }
   const id = new Date().getTime().toString();
   if (value && !editFlag) {
-    console.log("add item to the list");
+    const element = document.createElement("article");
+    // add class
+    element.classList.add("grocery-item");
   } else if (value && editFlag) {
     console.log("editing");
   } else {
@@ -36,7 +38,7 @@ function addItem(e) {
 function displayAlert(text, action) {
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
-  
+
   // remove alert
   setTimeout(function () {
     alert.textContent = "";
