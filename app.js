@@ -17,6 +17,22 @@ let editID = "";
 form.addEventListener("submit", addItem);
 
 // ****** FUNCTIONS **********
+function addItem(e) {
+  e.preventDefault();
+  const value = grocery.value;
+  if (value) {
+    console.log("value is falsy");
+  }
+  const id = new Date().getTime().toString();
+  if (value && !editFlag) {
+    console.log("add item to the list");
+  } else if (value && editFlag) {
+    console.log("editing");
+  } else {
+    alert.textContent = "empty value";
+    alert.classList.add("alert-danger");
+  }
+}
 
 // ****** LOCAL STORAGE **********
 
